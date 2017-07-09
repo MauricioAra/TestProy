@@ -7,6 +7,7 @@ import Settings from '../screens/Settings';
 import UserDetail from '../screens/UserDetail';
 import Me from '../screens/Me';
 import Table from '../screens/Table';
+import Place from '../screens/Place';
 
 export const FeedStack = StackNavigator({
   Table: {
@@ -20,6 +21,12 @@ export const FeedStack = StackNavigator({
     navigationOptions: ({ navigation }) => ({
       title: `${navigation.state.params.name.first.toUpperCase()} ${navigation.state.params.name.last.toUpperCase()}`,
     }),
+  },
+  Place: {
+    screen: Place,
+    navigationOptions: {
+      title: 'Lugar',
+    },
   },
 });
 

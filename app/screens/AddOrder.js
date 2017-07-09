@@ -10,7 +10,7 @@ constructor(props){
     super(props);
     this.state = {
         foodTimeSelected:null,
-        text: 'Useless Placeholder',
+        text: '',
         displayValue: 0,
     }
 }
@@ -20,7 +20,9 @@ handleSettingsPress = () => {
 };
 
 onValueChange = (key: string, value: string) => {
- 
+    const newState = {};
+    newState[key] = value;
+    this.setState(newState);
 };
 
 valueChanged(value) {
@@ -38,14 +40,14 @@ valueChanged(value) {
     <View style={{flex: 0.1}}>
       <ScrollView>
           
-            <Picker
+             <Picker
                 selectedValue={this.state.foodTimeSelected}
                 onValueChange={this.onValueChange.bind(this, 'foodTimeSelected')}>
-                <Item label="Almidones" value="Almidones" />
-                <Item label="Proteínas " value="Proteínas" />
-                <Item label="Vegetales " value="Vegetales" />
-                <Item label="Frutas " value="Frutas" />
-                <Item label="Lácteos " value="Lácteos" />
+                <Picker.Item label="Almidones" value="Almidones" />
+                <Picker.Item label="Proteínas " value="Proteínas" />
+                <Picker.Item label="Vegetales " value="Vegetales" />
+                <Picker.Item label="Frutas " value="Frutas" />
+                <Picker.Item label="Lácteos " value="Lácteos" />
             </Picker>
             
             <TextInput
@@ -59,12 +61,14 @@ valueChanged(value) {
             <View style={styles.container}>
                 <SimpleStepper  valueChanged={(value) => this.valueChanged(value)} />
             </View>
-            <Button  
-                onPress={e => this.handleSettingsPress()}
-                title="AGREGAR"
-                accessibilityLabel="No"
-                />
       </ScrollView>
+        <View>
+        <Button  
+            onPress={e => this.handleSettingsPress()}
+            title="AGREGAR"
+            accessibilityLabel="No"
+            />
+        </View>
     </View>
     );
   }

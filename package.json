@@ -14,7 +14,8 @@
     "react-native-select-list": "^1.0.5",
     "react-native-simple-stepper": "^1.16.0",
     "react-native-vector-icons": "^4.0.0",
-    "react-navigation": "^1.0.0-beta.6"
+    "react-navigation": "^1.0.0-beta.6",
+    "realm": "^1.8.3"
   },
   "devDependencies": {
     "babel-jest": "19.0.0",

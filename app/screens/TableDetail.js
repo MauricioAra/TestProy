@@ -24,7 +24,6 @@ class TableDetail extends Component {
               key={plate.id}
               title={plate.name}
               subtitle={plate.cant}
-              onPress={() => this.onLearnMore(plate)}
             />
           ))}
         </List>
@@ -40,5 +39,4 @@ class TableDetail extends Component {
     );
   }
 }
-
 export default TableDetail;

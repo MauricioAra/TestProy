@@ -2,42 +2,34 @@ import React, { Component } from 'react';
 import { ScrollView,StyleSheet , View} from 'react-native';
 import { Tile, List, ListItem, Button,Text } from 'react-native-elements';
 import { Col, Row, Grid } from "react-native-easy-grid";
-
-class Place extends Component {
+import { mesas } from '../config/data';
+class Tables extends Component {
     constructor(props) {
         super(props);
         this.state = {
             
          }
     }
-handleSettingsPress = () => {
-    this.props.navigation.navigate('Place');
+
+onLearnMore = (user) => {
+  this.props.navigation.navigate('Details');
 };
 
-handleKitchensPress = () => {
-    this.props.navigation.navigate('Kitchen');
-};
 
 render() {
     
     return (
-        <Grid>
-            <Row size={1} style={styles.containerOne}>
-              <Button  
-                    onPress={e => this.handleSettingsPress()}
-                    title="SALÓN"
-                    accessibilityLabel="No"
-                    />
-            </Row>
-            <Row size={1} style={styles.containerTwo}>
-              <Button  
-                onPress={e => this.handleKitchensPress()}
-                title="COCINA"
-                accessibilityLabel="No"
-                />
-            </Row>
-          
-        </Grid>
+        <ScrollView>
+        <List>
+          {mesas.map((mesa) => (
+            <ListItem
+              key={mesa.id}
+              title={mesa.name}
+              onPress={() => this.onLearnMore(mesa)}
+            />
+          ))}
+        </List>
+      </ScrollView>
     );
   }
 }
@@ -68,4 +60,4 @@ const styles = StyleSheet.create({
   },
 
 });
-export default Place;
+export default Tables;

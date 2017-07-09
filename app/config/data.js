@@ -36,6 +36,28 @@ export const me = {
   "nat": "US"
 };
 
+export const cocina = [
+  {
+    "id":1,
+    "name": "Margarita",
+    "cant":"2"
+  }
+]
+export const mesas = [
+  {
+    "id":1,
+    "name": "Mesa 1",
+  },
+  {
+    "id":2,
+    "name": "Mesa 2",
+  },
+  {
+    "id":3,
+    "name": "Mesa 3",
+  }
+]
+
 export const users = [
   {
     "gender": "male",

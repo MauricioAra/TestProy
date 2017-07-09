@@ -8,6 +8,7 @@ import UserDetail from '../screens/UserDetail';
 import Me from '../screens/Me';
 import Table from '../screens/Table';
 import Place from '../screens/Place';
+import Kitchen from '../screens/Kitchen';
 
 export const FeedStack = StackNavigator({
   Table: {
@@ -26,6 +27,12 @@ export const FeedStack = StackNavigator({
     screen: Place,
     navigationOptions: {
       title: 'Lugar',
+    },
+  },
+  Kitchen: {
+    screen: Kitchen,
+    navigationOptions: {
+      title: 'Cocina',
     },
   },
 });

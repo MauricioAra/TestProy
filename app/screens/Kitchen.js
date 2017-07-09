@@ -2,8 +2,8 @@ import React, { Component } from 'react';
 import { ScrollView,StyleSheet , View} from 'react-native';
 import { Tile, List, ListItem, Button,Text } from 'react-native-elements';
 import { Col, Row, Grid } from "react-native-easy-grid";
-
-class Place extends Component {
+import { cocina } from '../config/data';
+class Kitchen extends Component {
     constructor(props) {
         super(props);
         this.state = {
@@ -14,30 +14,26 @@ handleSettingsPress = () => {
     this.props.navigation.navigate('Place');
 };
 
-handleKitchensPress = () => {
-    this.props.navigation.navigate('Kitchen');
+onLearnMore = (user) => {
+  this.props.navigation.navigate('Details', { ...user });
 };
+
 
 render() {
     
     return (
-        <Grid>
-            <Row size={1} style={styles.containerOne}>
-              <Button  
-                    onPress={e => this.handleSettingsPress()}
-                    title="SALÓN"
-                    accessibilityLabel="No"
-                    />
-            </Row>
-            <Row size={1} style={styles.containerTwo}>
-              <Button  
-                onPress={e => this.handleKitchensPress()}
-                title="COCINA"
-                accessibilityLabel="No"
-                />
-            </Row>
-          
-        </Grid>
+        <ScrollView>
+        <List>
+          {cocina.map((plate) => (
+            <ListItem
+              key={plate.id}
+              title={plate.name}
+              subtitle={plate.cant}
+              onPress={() => this.onLearnMore(plate)}
+            />
+          ))}
+        </List>
+      </ScrollView>
     );
   }
 }
@@ -68,4 +64,4 @@ const styles = StyleSheet.create({
   },
 
 });
-export default Place;
+export default Kitchen;

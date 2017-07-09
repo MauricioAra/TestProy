@@ -11,6 +11,7 @@ import Place from '../screens/Place';
 import Kitchen from '../screens/Kitchen';
 import Tables from '../screens/Tables';
 import TableDetail from '../screens/TableDetail';
+import AddOrder from '../screens/AddOrder';
 
 export const FeedStack = StackNavigator({
   Table: {
@@ -45,6 +46,12 @@ export const FeedStack = StackNavigator({
   },
   TableDetail: {
     screen: TableDetail,
+    navigationOptions: ({ navigation }) => ({
+      title: `${navigation.state.params.name}`,
+    }),
+  },
+  AddOrder: {
+    screen: AddOrder,
     navigationOptions: ({ navigation }) => ({
       title: `${navigation.state.params.name}`,
     }),

@@ -5,14 +5,16 @@ import { cocina } from '../config/data';
 class TableDetail extends Component {
 
 
-
-  handleSettingsPress = () => {
-    this.props.navigation.navigate('Place');
+  handleSettingsPress = (id,name) => {
+    const mesa = {
+      id:id,
+      name:name
+    }
+    this.props.navigation.navigate('AddOrder', { ...mesa });
  };
 
   render() {
     const { id, name } = this.props.navigation.state.params;
-
     return (
     <View style={{flex: 0.1}}>
       <ScrollView>
@@ -29,7 +31,7 @@ class TableDetail extends Component {
       </ScrollView>
       <View style={{flex: 0.1}}>
             <Button  
-                onPress={e => this.handleSettingsPress()}
+                onPress={e => this.handleSettingsPress(id,name)}
                 title="AGREGAR ORDEN"
                 accessibilityLabel="No"
                 />

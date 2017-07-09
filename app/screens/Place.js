@@ -11,7 +11,7 @@ class Place extends Component {
          }
     }
 handleSettingsPress = () => {
-    this.props.navigation.navigate('Place');
+    this.props.navigation.navigate('Tables');
 };
 
 handleKitchensPress = () => {

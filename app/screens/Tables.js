@@ -4,6 +4,7 @@ import { Tile, List, ListItem, Button,Text } from 'react-native-elements';
 import { Col, Row, Grid } from "react-native-easy-grid";
 import { mesas } from '../config/data';
 class Tables extends Component {
+    
     constructor(props) {
         super(props);
         this.state = {
@@ -11,13 +12,11 @@ class Tables extends Component {
          }
     }
 
-onLearnMore = (user) => {
-  this.props.navigation.navigate('Details');
+onLearnMore = (mesa) => {
+  this.props.navigation.navigate('TableDetail', { ...mesa });
 };
 
-
 render() {
-    
     return (
         <ScrollView>
         <List>

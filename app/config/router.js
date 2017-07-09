@@ -9,6 +9,8 @@ import Me from '../screens/Me';
 import Table from '../screens/Table';
 import Place from '../screens/Place';
 import Kitchen from '../screens/Kitchen';
+import Tables from '../screens/Tables';
+import TableDetail from '../screens/TableDetail';
 
 export const FeedStack = StackNavigator({
   Table: {
@@ -35,6 +37,18 @@ export const FeedStack = StackNavigator({
       title: 'Cocina',
     },
   },
+  Tables: {
+    screen: Tables,
+    navigationOptions: {
+      title: 'Mesas',
+    },
+  },
+  TableDetail: {
+    screen: TableDetail,
+    navigationOptions: ({ navigation }) => ({
+      title: `${navigation.state.params.name}`,
+    }),
+  },
 });
 
 export const Tabs = TabNavigator({
@@ -45,13 +59,7 @@ export const Tabs = TabNavigator({
       tabBarIcon: ({ tintColor }) => <Icon name="list" size={35} color={tintColor} />,
     },
   },
-  Me: {
-    screen: Me,
-    navigationOptions: {
-      tabBarLabel: 'Salonero',
-      tabBarIcon: ({ tintColor }) => <Icon name="account-circle" size={35} color={tintColor} />
-    },
-  },
+  
 });
 
 export const SettingsStack = StackNavigator({
